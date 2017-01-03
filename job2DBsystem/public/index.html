@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang = "en-US" ng-app = "seqApp">
+    <head>
+        <meta charset = "UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+<body>
+    <div class = "container" ng-controller = "seqAppController">
+        <h1>Welcome to Sequencing Job Management System</h1>
+        <br><br><br>
+        <form action = "./jobSubmit.html">
+            <div class="col-sm-3">
+                <button class = "btn btn-primary center-block">I am a client</button>
+            </div>    
+        </form>
+        <br><br><br><br><br>
+        <hr></hr>
+        <fieldset class = "form-group row">
+        <form name = "adminLoginForm" action = "./jobView.html" onsubmit = "return adminLoginCheck()">
+            <label for = "adminUsername">Admin Username:</label>
+            <input type = "text" class = "control-form" name = "adminUsername"><br>
+            <label for = "adminPassword">Admin Password:</label>
+            <input type = "text" class = "control-form" name = "adminPassword">
+            <button class = "btn btn-sm btn-secondary">I am the admin</button> 
+        </form>
+        </fieldset>
+        
+        <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <hr>
+        <address>
+            If you encounter any technical error please email: szang@uci.edu. Thank you.
+        </address>
+        </hr>
+    </div>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+<script src = "./controllers/seqAppController.js"></script>
+<script src = "./js/loginCheck.js"></script>
+</body>
+</html>

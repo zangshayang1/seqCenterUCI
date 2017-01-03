@@ -1,0 +1,16 @@
+{
+  "name": "job2db_system",
+  "version": "1.0.0",
+  "description": "Client can submit their sequencing jobs via jobSubmit page and admin can view the results from DB once she/he logs in.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shayang Zang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0"
+  }
+}

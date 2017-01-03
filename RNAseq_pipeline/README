@@ -1,0 +1,20 @@
+This pkg contains a set of scripts that automate the RNA-seq upstream data processing from downloading to combining DGE (differential gene expression) lists. 
+
+HOW TO USE ?
+
+1. copy the four scripts to an empty dir where you want to download/align/count your sequencing data
+
+2. configure in "run_RNAseq.sh"
+    names of output dir
+    data source webpage
+    data type
+    trimming model as in SE or PE
+    maximum reads possible
+    indexed reference genome path
+    annotation referecen path
+    environment variable
+
+3. in RNAseq_module.sh, fine tune parameters for every tool involved and access path of tools if needed.
+
+4. run "run_RNAseq.sh"
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang = "en-US" ng-app = "seqApp">
+    <head>
+        <meta charset = "UTF-8">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+    <div class = "container" ng-controller = "seqAppController">
+        <h3>Please submit your sequencing job.</h3> 
+        <br><br>       
+        <form action = "./submitted.html" class = "form-group" name = "jobSubmitForm" onsubmit = "return jobSubmitFormCompleteCheck()">
+        <fieldset class = "form-group">
+            
+            <table><tr>
+                    <th><label for = "clientName">Client full name:</label></th>
+                    <td><input required type = "text" class = "form-control" name = "clientName" ng-model = "seq.name"></td>    
+            </table></tr><br><br>
+
+            <table><tr>
+                    <th><label for = "clientEmail">Client e-mail:</label></th>
+                    <td><input required type = "email" class = "form-control" name = "clientEmail" ng-model = "seq.email"></td> 
+            </table></tr><br><br>
+
+            <label for = "selectService">Please select your service:</label>
+            <select required class = "custom-select" name = "selectService" ng-model = "seq.service">
+                <option name = "default" value = "" disabled = "disabled">-------</option>
+                <option name = "rna-seq" value = "RNA-seq">RNA-seq</option>
+                <option name = "chip-seq" value = "ChIP-seq">ChIP-seq</option>
+            </select><br><br>
+
+            <table><tr>
+                    <th><label for = "sampleConcentration">Please tell us about your sample concentration:</label></th>
+                    <td><input required type = "text" class = "form-control" name = "sampleConcentration"  ng-model = "seq.concentration"></td>
+            </tr></table><br><br>
+
+            <label for = "selectSeqMode">Please select your sequencing mode:</label>
+            <select required class = "custom-select" name = "selectSeqMode" ng-model = "seq.mode">
+                <option name = "default" value = "" disabled = "disabled">-------</option>
+                <option name = "pe-mode" value = "pe">pair-end</option>
+                <option name = "se-mode" value = "se">single-end</option>
+            </select><br><br>
+
+            <label for = "selectReadsLength">Please choose single read length:</label>
+            <select required class = "custom-select" name = "selectReadsLength" ng-model = "seq.readsLength">
+                <option name = "default" value = "" disabled = "disabled">-------</option>
+                <option name = 50 value = 50>50</option>
+                <option name = 75 value = 75>75</option>
+                <option name = 100 value = 100>100</option>
+                <option name = 150 value = 150>150</option>
+                <option name = 200 value = 200>200</option>
+                <option name = 250 value = 250>250</option>
+                <option name = 300 value = 300>300</option>
+            </select><br><br>
+            
+            <table><tr>
+                <th><label for "targetDepth">Please provide a preferred sequencing depth:</label></th>
+                <td><input type = "text" required class = "form-control" name = "targetDepth" ng-model = "seq.targetDepth"></td>
+            </table></tr><br><br>
+
+            <button type = "submit" class = "btn btn-primary" ng-click = "addSeqJob()">Submit</button>
+            <hr>
+            <p>Please submit only <b>completed</b> form before we can start processing your sample/data.</p>
+            <p>If you submitted wrong info please immediately contact: jiew5@uci.edu. Thank you.</p>
+            </hr>
+        </fieldset> 
+        </form> 
+    </div>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+        <script src = "./controllers/seqAppController.js"></script>
+        <script src = "./js/jobSubmitCheck.js"></script>
+    </body>
+</html>
